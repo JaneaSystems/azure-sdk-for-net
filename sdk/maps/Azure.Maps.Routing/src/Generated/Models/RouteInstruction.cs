@@ -55,8 +55,6 @@ namespace Azure.Maps.Routing.Models
         ///   * \&gt;0 - keep right
         /// </summary>
         public int? TurnAngleInDegrees { get; }
-        /// <summary> This indicates which exit to take at a roundabout. </summary>
-        public string RoundaboutExitNumber { get; }
         /// <summary> It is possible to optionally combine the instruction with the next one. This can be used to build messages like "Turn left and then turn right". </summary>
         public bool? PossibleCombineWithNext { get; }
         /// <summary> Indicates left-hand vs. right-hand side driving at the point of the maneuver. </summary>

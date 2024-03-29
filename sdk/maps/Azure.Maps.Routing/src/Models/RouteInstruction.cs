@@ -59,7 +59,7 @@ namespace Azure.Maps.Routing.Models
         /// then follow Einsteinweg/A10/E22 towards Ring Amsterdam.
         /// </code>
         /// </param>
-        internal RouteInstruction(int? routeOffsetInMeters, int? travelTimeInSeconds, LatLongPair point, int? pointIndex, GuidanceInstructionType? instructionType, IReadOnlyList<string> roadNumbers, string exitNumber, string street, string signpostText, string countryCode, string stateCode, JunctionType? junctionType, int? turnAngleInDegrees, string roundaboutExitNumber, bool? possibleCombineWithNext, DrivingSide? drivingSide, GuidanceManeuver? maneuver, string message, string combinedMessage)
+        internal RouteInstruction(int? routeOffsetInMeters, int? travelTimeInSeconds, LatLongPair point, int? pointIndex, GuidanceInstructionType? instructionType, IReadOnlyList<string> roadNumbers, string exitNumber, string street, string signpostText, string countryCode, string stateCode, JunctionType? junctionType, int? turnAngleInDegrees, int roundaboutExitNumber, bool? possibleCombineWithNext, DrivingSide? drivingSide, GuidanceManeuver? maneuver, string message, string combinedMessage)
         {
             RouteOffsetInMeters = routeOffsetInMeters;
             TravelTimeInSeconds = travelTimeInSeconds;
@@ -83,6 +83,8 @@ namespace Azure.Maps.Routing.Models
             CombinedMessage = combinedMessage;
         }
 
+        [CodeGenMember("RoundaboutExitNumber")]
+        internal int RoundaboutExitNumber { get; }
         /// <summary> A location represented as a latitude and longitude. </summary>
         [CodeGenMember("Point")]
         internal LatLongPair _Point { get; }
